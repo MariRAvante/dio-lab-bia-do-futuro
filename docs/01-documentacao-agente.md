@@ -5,17 +5,21 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-[Sua descrição aqui]
+[Muitas pessoas precisam verificar rapidamente seus gastos mensais, calcular valores, estimar despesas ou entender se estão dentro do orçamento, mas nem sempre desejam armazenar dados financeiros em um sistema.]
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-[Sua descrição aqui]
+[O agente funciona como um assistente financeiro de cálculo e consulta imediata, sem salvar informações.]
 
 ### Público-Alvo
 > Quem vai usar esse agente?
 
-[Sua descrição aqui]
+[Estudantes
+Pessoas que querem fazer cálculos financeiros rápidos
+Usuários que não desejam armazenar dados
+Usuários preocupados com privacidade
+Pessoas que querem simular orçamento]
 
 ---
 
