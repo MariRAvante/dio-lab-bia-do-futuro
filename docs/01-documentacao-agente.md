@@ -54,8 +54,13 @@ Acessível, claro, informal e didático.
 ### Diagrama
 
 ```mermaid
-<img width="707" height="788" alt="image" src="https://github.com/user-attachments/assets/ea44ad71-e8e7-4e0d-a519-121a17e152fe" />
-
+flowchart TD
+    A[Usuário] --> B["Interface Visual"]
+    B --> C[LLM]
+    C --> D[Cálculo]
+    D --> C
+    C --> E[Validação]
+    E --> F[Resposta]
 ```
 
 
