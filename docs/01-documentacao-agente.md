@@ -5,43 +5,47 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-[Muitas pessoas precisam verificar rapidamente seus gastos mensais, calcular valores, estimar despesas ou entender se estão dentro do orçamento, mas nem sempre desejam armazenar dados financeiros em um sistema.]
+Muitas pessoas precisam verificar rapidamente seus gastos mensais, calcular valores, estimar despesas ou entender se estão dentro do orçamento, mas nem sempre desejam armazenar dados financeiros em um sistema.
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-[O agente funciona como um assistente financeiro de cálculo e consulta imediata, sem salvar informações.]
+O agente funciona como um assistente financeiro de cálculo e consulta imediata, sem salvar informações.
 
 ### Público-Alvo
 > Quem vai usar esse agente?
 
-[Estudantes
+Estudantes
 Pessoas que querem fazer cálculos financeiros rápidos
 Usuários que não desejam armazenar dados
 Usuários preocupados com privacidade
-Pessoas que querem simular orçamento]
+Pessoas que querem simular orçamento
 
 ---
 
 ## Persona e Tom de Voz
 
 ### Nome do Agente
-[Nome escolhido]
+ConsultaGastos
 
 ### Personalidade
 > Como o agente se comporta? (ex: consultivo, direto, educativo)
 
-[Sua descrição aqui]
+Direto
+Rápido
+Objetivo
+Educativo
+Confiável
 
 ### Tom de Comunicação
 > Formal, informal, técnico, acessível?
 
-[Sua descrição aqui]
+Acessível, claro, informal e didático.
 
 ### Exemplos de Linguagem
-- Saudação: [ex: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: [ex: "Entendi! Deixa eu verificar isso para você."]
-- Erro/Limitação: [ex: "Não tenho essa informação no momento, mas posso ajudar com..."]
+- Saudação: Olá, sou o ConsultaGastos! Posso ajudar você a calcular seus gastos rapidamente.
+- Confirmação: Entendi! Vou calcular isso para você agora.
+- Erro/Limitação: Não armazeno informações, mas posso refazer o cálculo sempre que você precisar.
 
 ---
 
@@ -50,23 +54,19 @@ Pessoas que querem simular orçamento]
 ### Diagrama
 
 ```mermaid
-flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
-    B --> C[LLM]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
+<img width="707" height="788" alt="image" src="https://github.com/user-attachments/assets/ea44ad71-e8e7-4e0d-a519-121a17e152fe" />
+
 ```
+
 
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface | Streamlit |
+| LLM | Ollama |
+| Processamento | Cálculos financeiros e simulações |
+| Validação |Verificação básica de valores numéricos |
 
 ---
 
@@ -74,12 +74,18 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- [ ] O agente realiza apenas cálculos matemáticos baseados na entrada do usuário
+- [ ] Não inventa dados financeiros
+- [ ] Descarta dados após a resposta
+- [ ] Usa regras matemáticas para validar resultados
+- [ ] Não armazena informações
+- [ ] Solicita confirmação quando valores são ambíguos
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+- [ ] Armazena dados
+- [ ] Cria histórico de gastos
+- [ ] Acessa contas bancárias
+- [ ] Faz investimentos
+- [ ] Gera relatórios financeiros permanentes
