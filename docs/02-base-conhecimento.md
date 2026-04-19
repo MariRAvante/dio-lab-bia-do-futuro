@@ -6,7 +6,6 @@
 |---------|---------|---------------------|
 | `entrada_usuario` | Texto | Valores informados pelo usuário para cálculo financeiro |
 | `valores_temporarios` | Variáveis em memória | Armazenamento temporário durante a execução do cálculo |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
 | `parametros_calculo` | Numérico | Dados utilizados para operações matemáticas |
 
 ---
