@@ -2,17 +2,12 @@
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
-
 | Arquivo | Formato | Utilização no Agente |
 |---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
+| `entrada_usuario` | Texto | Valores informados pelo usuário para cálculo financeiro |
+| `valores_temporarios` | Variáveis em memória | Armazenamento temporário durante a execução do cálculo |
 | `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
+| `parametros_calculo` | Numérico | Dados utilizados para operações matemáticas |
 
 ---
 
@@ -20,7 +15,11 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[Sua descrição aqui]
+O funcionamento do agente baseia-se apenas em:
+
+Entrada direta do usuário
+Processamento matemático imediato
+Descarte dos dados após a resposta
 
 ---
 
@@ -29,12 +28,32 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+Os dados são inseridos manualmente pelo usuário durante a interação com o agente.
+
+Esses dados:
+
+São recebidos via interface (Streamlit)
+São processados imediatamente
+São mantidos temporariamente em memória
+São descartados após a resposta
+
+Não há carregamento de arquivos JSON, CSV ou banco de dados.
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+Os dados fornecidos pelo usuário são incluídos diretamente no prompt enviado ao modelo de linguagem (Ollama).
+
+Eles são utilizados apenas durante a execução da consulta.
+
+Os dados:
+
+Não são armazenados
+Não são reutilizados
+Não são persistidos
+Não fazem parte de uma base de conhecimento permanente
+
+O prompt é gerado dinamicamente a cada interação.
 
 ---
 
@@ -43,13 +62,23 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 > Mostre um exemplo de como os dados são formatados para o agente.
 
 ```
-Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Entrada: 
+Renda mensal: 2500
+Gastos: 1800
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
+- Contexto
+Você é um assistente financeiro.
+
+O usuário informou:
+
+Renda mensal: 2500 reais
+Gastos totais: 1800 reais
+
+Calcule:
+
+- Quanto sobra do orçamento
+- Explique o resultado de forma simples
+
+- Resposta
+Sobra 700 reais do seu orçamento mensal.
 ```
